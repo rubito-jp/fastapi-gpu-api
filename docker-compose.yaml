@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
 
   fastapi:
-    build: ./fastapi-app
+    build: ./fastapi-gpu-api
     container_name: fastapi
     ports:
       - "8000:8000"
