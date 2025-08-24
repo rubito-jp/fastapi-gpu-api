@@ -6,13 +6,14 @@ services:
     container_name: voicevox
     runtime: nvidia
     environment:
-      - NVIDIA_VISIBLE_DEVICES=all 
+      - NVIDIA_VISIBLE_DEVICES=all
     ports:
       - "50021:50021"
     restart: unless-stopped
 
   fastapi:
-    build: ./fastapi-gpu-api
+    build:
+      context: ./fastapi-app
     container_name: fastapi
     ports:
       - "8000:8000"
